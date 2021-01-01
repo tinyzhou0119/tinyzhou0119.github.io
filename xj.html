@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学信档案</title>
+  <script>
+    !function () { var a = "@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}", b = document.createElement("style"); if (document.getElementsByTagName("head")[0].appendChild(b), b.styleSheet) b.styleSheet.disabled || (b.styleSheet.cssText = a); else try { b.innerHTML = a } catch (c) { b.innerText = a } }(); !function (a, b) { function c() { var b = f.getBoundingClientRect().width; b / i > 540 && (b = 540 * i); var c = b / 10; f.style.fontSize = c + "px", k.rem = a.rem = c } var d, e = a.document, f = e.documentElement, g = e.querySelector('meta[name="viewport"]'), h = e.querySelector('meta[name="flexible"]'), i = 0, j = 0, k = b.flexible || (b.flexible = {}); if (g) { console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�"); var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/); l && (j = parseFloat(l[1]), i = parseInt(1 / j)) } else if (h) { var m = h.getAttribute("content"); if (m) { var n = m.match(/initial\-dpr=([\d\.]+)/), o = m.match(/maximum\-dpr=([\d\.]+)/); n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2))) } } if (!i && !j) { var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)), q = a.devicePixelRatio; i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i } if (f.setAttribute("data-dpr", i), !g) if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g); else { var r = e.createElement("div"); r.appendChild(g), e.write(r.innerHTML) } a.addEventListener("resize", function () { clearTimeout(d), d = setTimeout(c, 300) }, !1), a.addEventListener("pageshow", function (a) { a.persisted && (clearTimeout(d), d = setTimeout(c, 300)) }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () { e.body.style.fontSize = 12 * i + "px" }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) { var b = parseFloat(a) * this.rem; return "string" == typeof a && a.match(/rem$/) && (b += "px"), b }, k.px2rem = function (a) { var b = parseFloat(a) / this.rem; return "string" == typeof a && a.match(/px$/) && (b += "rem"), b } }(window, window.lib || (window.lib = {}));
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      position: relative;
+      height: 1.173rem;
+      line-height: 1.173rem;
+      color: #000;
+      text-align: center;
+    }
+
+    .header .left {
+      position: absolute;
+      left: .2rem;
+      top: 0;
+      min-width: 1em;
+      font-size: .32rem;
+    }
+
+
+    .list {
+      padding: 0 .427rem;
+    }
+
+    .list-title {
+      display: flex;
+      justify-content: space-between;
+      margin: .2rem 0;
+    }
+
+    .list-title>div:nth-child(1) {
+      color: #333;
+      font-weight: 500;
+      font-size: .427rem;
+    }
+
+    .list-title>div:nth-child(2) {
+      font-size: .32rem;
+      color: #999;
+    }
+
+    .list-title>div:nth-child(2) a {
+      color: #26b887;
+      text-decoration: none;
+    }
+
+
+    .list-card {
+      position: relative;
+      padding: .427rem;
+      margin: .053rem .4rem;
+      border-radius: .16rem;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 0.107rem 0.213rem rgba(63, 203, 146, .4);
+      background: linear-gradient(90deg, #1faf7f, #3fcb92);
+      height: 5.6rem;
+      box-sizing: border-box;
+    }
+
+    .xl {
+      box-shadow: 0 0.107rem 0.213rem rgba(63, 203, 146, .4);
+      background: linear-gradient(180deg, #1faf7f, #3fcb92);
+    }
+
+
+    .list-card .right {
+      position: absolute;
+      right: .4rem;
+      top: 3.8rem;
+      background-color: #00aa6c;
+      width: 1rem;
+      height: .5rem;
+      border-radius: 1rem;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .list-card .title {
+      position: absolute;
+      top: 3.6rem;
+      left: .4rem;
+      font-size: .48rem;
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .list-card .major {
+      position: absolute;
+      left: .4rem;
+      top: 4.6rem;
+      color: rgba(255, 255, 255, .7);
+      font-size: .24rem;
+    }
+
+    .avatar,
+    .avatar2 {
+      position: absolute;
+      left: .4rem;
+      top: .5rem;
+      width: 1.2rem;
+      height: 1.6rem;
+      border-radius: .16rem;
+      border: 1px solid #c0e8db;
+      margin-right: .107rem;
+      font-size: .267rem;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+    }
+
+    .name {
+      position: absolute;
+      left: 3.6rem;
+      top: .6rem;
+      font-size: .427rem;
+      color: rgba(255, 255, 255, .7);
+
+    }
+
+    .birthday {
+      position: absolute;
+      left: 3.6rem;
+      top: 1.2rem;
+      font-size: .32rem;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      background: #fff url(sy.jpg) repeat center center;
+      height: 8.37rem;
+      margin: .533rem 0;
+    }
+
+    .list .item {
+      display: flex;
+      box-sizing: border-box;
+      margin: .2rem;
+    }
+
+    .list .item>div {
+      box-sizing: border-box;
+
+    }
+
+    .list .item>div:nth-child(1) {
+      flex: 1;
+      text-align: right;
+      margin-right: .5rem;
+      box-sizing: border-box;
+      color: #999;
+    }
+
+    .list .item>div:nth-child(2) {
+      flex: 2;
+      color: #0a0a0a;
+      box-sizing: border-box;
+      font-weight: 500;
+
+    }
+
+    .btn-wrap {
+      margin: 1.5rem 0 1rem;
+      padding: 0 .4rem;
+    }
+
+    button {
+      border: none;
+      outline: none;
+      height: 1.227rem;
+      line-height: 1.227rem;
+      font-size: .427rem;
+      width: 100%;
+      background-color: #26b887;
+      border: 1px solid #26b887;
+      color: #fff;
+
+    }
+
+    .avatar2 {
+      left: 2rem;
+    }
+
+    .avatar2 img {
+      width: 100%;
+    }
+
+    .lqzp {
+      position: absolute;
+      left: 0rem;
+      top: 2.2rem;
+      font-size: 20px;
+      transform: scale(.5, .5);
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .xlzp {
+      position: absolute;
+      left: 1.6rem;
+      top: 2.2rem;
+      font-size: 20px;
+      transform: scale(.5, .5);
+      color: rgba(255, 255, 255, .7);
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <a href="./index.html">
+      <span class="left" style="color: #000;">&lt;
+      </span>
+    </a>
+    <span class="title" style="font-size:.32rem; font-weight: 500;">高等学籍</span>
+  </div>
+
+  <div class="list-card xl">
+    <div class="lqzp">录取照片</div>
+    <div class="xlzp">学历照片</div>
+
+    <div class="name">武瑾杰</div>
+    <div class="birthday">男&nbsp;&nbsp;1989年12月27日</div>
+    <div class="avatar">
+      <img src="./avatar.jpeg" />
+    </div>
+    <div class="avatar2">
+      <img src="./avatar2.jpeg" />
+    </div>
+    <div class="title">山西药科职业学院</div>
+    <div class="right">专科</div>
+    <div class="major">生物制药技术 | 普通全日制</div>
+  </div>
+
+  <div class="list">
+    <div class="item">
+      <div>民族</div>
+      <div>汉族</div>
+    </div>
+    <div class="item">
+      <div>证件号码</div>
+      <div>141122198912270057</div>
+    </div>
+    <div class="item">
+      <div>学制</div>
+      <div>3年</div>
+    </div>
+    <div class="item">
+      <div>学历类别</div>
+      <div>普通</div>
+    </div>
+    <div class="item">
+      <div>分院</div>
+      <div>直属</div>
+    </div>
+    <div class="item">
+      <div>系所</div>
+      <div>生物制药工程系</div>
+    </div>
+    <div class="item">
+      <div>班级</div>
+      <div>高职241班</div>
+    </div>
+    <div class="item">
+      <div>学号</div>
+      <div>2009224016</div>
+    </div>
+    <div class="item">
+      <div>入学日期</div>
+      <div>2009年09月18日
+      </div>
+    </div>
+    <div class="item">
+      <div>离校日期</div>
+      <div>2012年07月01日
+      </div>
+    </div>
+    <div class="item">
+      <div>学籍状态</div>
+      <div>不在籍（毕业）
+      </div>
+    </div>
+  </div>
+  <div class="btn-wrap">
+    <button onclick="handleClick()">申请验证报告</button>
+  </div>
+</body>
+<script>
+  function handleClick() {
+    window.location.href = './beian2.html'
+  }
+</script>
+
+</html>
